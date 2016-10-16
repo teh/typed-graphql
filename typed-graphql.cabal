@@ -1,0 +1,48 @@
+-- This file has been generated from package.yaml by hpack version 0.14.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           typed-graphql
+version:        0.1.0.0
+synopsis:       Servant-style combinators for graphql
+license:        BSD3
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      lib
+  default-extensions: GeneralizedNewtypeDeriving MonadFailDesugaring NamedFieldPuns OverloadedStrings ScopedTypeVariables RecordWildCards
+  ghc-options: -Wall
+  build-depends:
+      base >=4.9 && <5
+    , aeson >= 0.11.1
+    , bytestring
+    , text
+    , graphql
+    , attoparsec
+  exposed-modules:
+      Data.GraphQl.Combinators
+  default-language: Haskell2010
+
+test-suite main-tests
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      tests
+  default-extensions: GeneralizedNewtypeDeriving MonadFailDesugaring NamedFieldPuns OverloadedStrings ScopedTypeVariables RecordWildCards
+  ghc-options: -Wall
+  build-depends:
+      base >=4.9 && <5
+    , aeson >= 0.11.1
+    , bytestring
+    , text
+    , graphql
+    , attoparsec
+    , QuickCheck
+    , typed-graphql
+    , tasty >= 0.10
+    , tasty-hspec >= 1.1.0
+    , tasty-hunit >= 0.9.0
+    , tasty-quickcheck >= 0.8
+  default-language: Haskell2010

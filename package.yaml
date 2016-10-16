@@ -1,0 +1,36 @@
+name: typed-graphql
+version: 0.1.0.0
+synopsis: Servant-style combinators for graphql
+license: BSD3
+
+ghc-options: -Wall
+default-extensions:
+  - GeneralizedNewtypeDeriving
+  - MonadFailDesugaring
+  - NamedFieldPuns
+  - OverloadedStrings
+  - ScopedTypeVariables
+  - RecordWildCards
+
+dependencies:
+  - base >=4.9 && <5
+  - aeson >= 0.11.1
+  - bytestring
+  - text
+  - graphql
+  - attoparsec
+
+library:
+  source-dirs: lib
+
+tests:
+  main-tests:
+    main: Main.hs
+    source-dirs: tests
+    dependencies:
+      - QuickCheck
+      - typed-graphql
+      - tasty >= 0.10
+      - tasty-hspec >= 1.1.0
+      - tasty-hunit >= 0.9.0
+      - tasty-quickcheck >= 0.8
